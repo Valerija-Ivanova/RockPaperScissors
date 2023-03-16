@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		
+		<title>Rock, Paper, Scissors</title>
+		<link rel="stylesheet" href="style.css">
+		
+	</head>
+	
+	<body>
+		
+		<div id="container">
+			
+			<div id="game">
+				<h2>Welcome to Rock, Paper, Scissors!</h2>
+				<p>To play, simply enter which gesture you'd like to make.</p>
+				
+				<form onsubmit="random()">
+					
+					<input type="text" id="gesture" placeholder="Input gesture">
+					<input type="submit" value="Play!">
+					
+				</form>
+				
+				<h3>Here's what the computer chose!<h3>
+				
+				<div id="result">
+					
+					<h1 id="computer"></h1>
+					
+				</div>
+				
+				<div id="result">
+					
+					<p id="outcome"></p>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<script src="script.js"></script>
+		
+	</body>
+	
+</html>
