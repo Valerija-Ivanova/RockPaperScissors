@@ -52,6 +52,7 @@ function random() {
 			else {
 				var outcome="Oops, wrong input! Try again.";
 				attempt=attempt-1;
+				choiceTracker.pop();
 			}
 			
 		}
@@ -74,6 +75,7 @@ function random() {
 			else {
 				var outcome="Oops, wrong input! Try again.";
 				attempt=attempt-1;
+				choiceTracker.pop();
 			}
 		}
 		else {
@@ -95,6 +97,7 @@ function random() {
 			else {
 				var outcome="Oops, wrong input! Try again.";
 				attempt=attempt-1;
+				choiceTracker.pop();
 			}
 		}
 		
