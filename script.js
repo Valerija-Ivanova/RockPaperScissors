@@ -1,6 +1,7 @@
 var attempt=0;
 var win=false;
 var comOutcome="";
+let winLoss=[];
 
 function random() {
 	
@@ -8,7 +9,7 @@ function random() {
 	
 	attempt=attempt+1;
 	
-	if(attempt<4 && win==false){
+	if(attempt<6 && win==false){
 		
 		var lowerCase=document.getElementById("gesture").value;
 		var userGesture=lowerCase.toLowerCase();
@@ -35,13 +36,16 @@ function random() {
 			
 			if (userGesture=="rock"){
 				var outcome="It's a draw!";
+				winLoss.push(" Draw");
 			}
 			else if (userGesture=="paper"){
 				var outcome="You win!";
 				win=true;
+				winLoss.push(" Win");
 			}
 			else if (userGesture=="scissors"){
 				var outcome="You lose!";
+				winLoss.push(" Loss");
 			}
 			else {
 				var outcome="Oops, wrong input! Try again.";
@@ -54,13 +58,16 @@ function random() {
 			
 			if (userGesture=="rock"){
 				var outcome="You lose!";
+				winLoss.push(" Loss");
 			}
 			else if (userGesture=="paper"){
 				var outcome="It's a draw!";
+				winLoss.push(" Draw");
 			}
 			else if (userGesture=="scissors"){
 				var outcome="You win!";
 				win=true;
+				winLoss.push(" Win");
 			}
 			else {
 				var outcome="Oops, wrong input! Try again.";
@@ -73,22 +80,30 @@ function random() {
 			if (userGesture=="rock"){
 				var outcome="You win!";
 				win=true;
+				winLoss.push(" Win");
 			}
 			else if (userGesture=="paper"){
 				var outcome="You lose!";
+				winLoss.push(" Loss");
 			}
 			else if (userGesture=="scissors"){
 				var outcome="It's a draw!";
+				winLoss.push(" Draw");
 			}
 			else {
 				var outcome="Oops, wrong input! Try again.";
 				attempt=attempt-1;
 			}
-		} 
+		}
 		
 		document.getElementById("computer").innerHTML=comOutcome;
 		
-		document.getElementById("outcome").innerHTML=outcome;
+		if (win==false){			
+			document.getElementById("outcome").innerHTML=outcome;
+		}
+		else {
+			document.getElementById("outcome").innerHTML=outcome+"<br>Your play history is: "+winLoss+".";
+		}
 		
 	}
 	else{
@@ -97,7 +112,7 @@ function random() {
 		
 		document.getElementById("computer").innerHTML="";
 		
-		document.getElementById("outcome").innerHTML="";
+		document.getElementById("outcome").innerHTML="Your play history is: "+winLoss+".";
 		
 	}
 	
