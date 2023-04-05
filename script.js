@@ -1,6 +1,7 @@
 var attempt=0;
 var win=false;
 var comOutcome="";
+let choiceTracker=[];
 let winLoss=[];
 
 function random() {
@@ -12,6 +13,7 @@ function random() {
 	if(attempt<6 && win==false){
 		
 		var lowerCase=document.getElementById("gesture").value;
+		choiceTracker.push(" "+lowerCase);
 		var userGesture=lowerCase.toLowerCase();
 		
 		document.getElementById("comChoose").innerHTML="Here's what the computer chose!";
@@ -102,7 +104,7 @@ function random() {
 			document.getElementById("outcome").innerHTML=outcome;
 		}
 		else {
-			document.getElementById("outcome").innerHTML=outcome+"<br>Your play history is: "+winLoss+".";
+			document.getElementById("outcome").innerHTML=outcome+"<br>Your play history is: "+winLoss+".<br>And your guesses were: "+choiceTracker+".";
 		}
 		
 	}
@@ -112,7 +114,7 @@ function random() {
 		
 		document.getElementById("computer").innerHTML="";
 		
-		document.getElementById("outcome").innerHTML="Your play history is: "+winLoss+".";
+		document.getElementById("outcome").innerHTML="Your play history is: "+winLoss+".<br>And your guesses were: "+choiceTracker+".";
 		
 	}
 	
